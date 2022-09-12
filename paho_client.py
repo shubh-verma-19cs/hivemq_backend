@@ -22,12 +22,13 @@ def on_subscribe(client, userdata, mid, granted_qos):
 client = mqtt.Client()
 
 client.username_pw_set(username="user1", password="pass1")
+
+client.connect("0.0.0.0", 1883, keepalive=600)
 client.on_connect = on_connect
 # client.on_subscribe = on_subscribe
 client.on_message = on_message
 
-client.connect("0.0.0.0", 1883, keepalive=600)
-publish.single("mytopic", "Hello World", 1, retain=True, hostname="0.0.0.0", auth = {'username':"user1", 'password':"pass1"})
+# publish.single("mytopic", "Hello World", 1, retain=True, hostname="0.0.0.0", auth = {'username':"user1", 'password':"pass1"})
 # Blocking call that processes network traffic, dispatches callbacks and
 # handles reconnecting.
 # Other loop*() functions are available that give a threaded interface and a

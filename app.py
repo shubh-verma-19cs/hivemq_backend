@@ -7,7 +7,7 @@ app.config['MQTT_BROKER_URL'] = '0.0.0.0'
 app.config['MQTT_BROKER_PORT'] = 1883
 app.config['MQTT_USERNAME'] = 'user1'
 app.config['MQTT_PASSWORD'] = 'pass1'
-app.config['MQTT_REFRESH_TIME'] = 5.0
+# app.config['MQTT_REFRESH_TIME'] = 600.0
 
 mqtt = Mqtt(app)
 
@@ -15,9 +15,9 @@ mqtt = Mqtt(app)
 app.debug = True
 
 
-# @app.route('/')
-# def index():
-#     return "Hello World on Flask"
+@app.route('/')
+def index():
+    return "Hello World on Flask"
 
 @mqtt.on_connect()
 def handle_connect(client, userdata, flags, rc):
