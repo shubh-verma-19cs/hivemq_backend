@@ -5,9 +5,9 @@ import flask_mqtt
 app = Flask(__name__)
 app.config['MQTT_BROKER_URL'] = '0.0.0.0'
 app.config['MQTT_BROKER_PORT'] = 1883
-app.config['MQTT_USERNAME'] = 'user1'
-app.config['MQTT_PASSWORD'] = 'pass1'
-# app.config['MQTT_REFRESH_TIME'] = 600.0
+# app.config['MQTT_USERNAME'] = 'user1'
+# app.config['MQTT_PASSWORD'] = 'pass1'
+app.config['MQTT_REFRESH_TIME'] = 60.0
 
 mqtt = Mqtt(app)
 
